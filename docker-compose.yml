@@ -1,0 +1,13 @@
+services:
+  email-sender:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MAIL_HOST=${MAIL_HOST}
+      - MAIL_PORT=${MAIL_PORT}
+      - MAIL_USER=${MAIL_USER}
+      - MAIL_PASS=${MAIL_PASS}
+      - MAIL_FROM=${MAIL_FROM}
+    volumes:
+      - .:/usr/src/app
